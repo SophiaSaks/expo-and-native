@@ -1,23 +1,26 @@
 import { StyleSheet, Text, View, Image } from 'react-native'
 import { Link } from 'expo-router'
 import Logo from '../assets/img/clayarooLogo.png'
+import ThemedView from '../components/ThemedView'
+import ThemedText from '../components/ThemedText'
+
 
 
 const Home = () => {
     return (
-        <View style={styles.container}>
+        <ThemedView style={styles.container}>
             <Image source={Logo} style={styles.img}/>
 
             <Text style={styles.title}>
                 Sophias testapp
             </Text>
-            <Text style={{ marginTop: 12, marginBottom: 30 }}>
+            <ThemedText style={{ marginTop: 12, marginBottom: 30 }}>
                 Får vi se vad detta blir
-            </Text>
+            </ThemedText>
 
             <Link href="/about" style={styles.link}>About page</Link>
              <Link href="/contact" style={styles.link}>Contact page</Link>
-        </View>
+        </ThemedView>
     )
 }
 
@@ -40,6 +43,5 @@ const styles = StyleSheet.create({
     },
     link: {
         borderBottomWidth: 1
-
     }
 })
