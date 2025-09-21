@@ -3,23 +3,30 @@ import { Link } from 'expo-router'
 import Logo from '../assets/img/clayarooLogo.png'
 import ThemedView from '../components/ThemedView'
 import ThemedText from '../components/ThemedText'
+import ThemedCard from '../components/ThemedCard'
+import Spacer from '../components/Spacer'
+
 
 
 
 const Home = () => {
     return (
         <ThemedView style={styles.container}>
-            <Image source={Logo} style={styles.img}/>
+            <Image source={Logo} style={styles.img} />
+            <ThemedCard>
 
-            <Text style={styles.title}>
-                Sophias testapp
-            </Text>
-            <ThemedText style={{ marginTop: 12, marginBottom: 30 }}>
-                Får vi se vad detta blir
-            </ThemedText>
+                <ThemedText title={true}>
+                    Sophias testapp
+                </ThemedText>
+                <ThemedText style={{ marginTop: 12, marginBottom: 30 }}>
+                    Får vi se vad detta blir
+                </ThemedText>
+            </ThemedCard>
+            <Spacer />
 
-            <Link href="/about" style={styles.link}>About page</Link>
-             <Link href="/contact" style={styles.link}>Contact page</Link>
+            <Link href="/login" style={styles.link}>Login</Link>
+            <Spacer height={12} />
+            <Link href="/register" style={styles.link}>Register</Link>
         </ThemedView>
     )
 }
@@ -31,10 +38,6 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center'
-    },
-    title: {
-        fontWeight: 'bold',
-        fontSize: 18
     },
     img: {
         marginVertical: 12,
