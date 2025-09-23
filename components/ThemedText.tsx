@@ -6,7 +6,7 @@ type ThemedTextProps = TextProps & {
     title?: boolean
 }
 
-const ThemedView: React.FC<ThemedTextProps> = ({ style, title = false,  ...props }) => {
+const ThemedText: React.FC<ThemedTextProps> = ({ style, title = false,  ...props }) => {
     const colorScheme = useColorScheme()
     const theme = colorScheme ? Colors[colorScheme] : Colors.light
     const textColor = title ? theme.title : theme.text
@@ -22,4 +22,4 @@ const ThemedView: React.FC<ThemedTextProps> = ({ style, title = false,  ...props
     )
 }
 
-export default ThemedView
+export default ThemedText

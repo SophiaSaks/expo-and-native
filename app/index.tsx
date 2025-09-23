@@ -27,6 +27,8 @@ const Home = () => {
             <Link href="/login" style={styles.link}>Login</Link>
             <Spacer height={12} />
             <Link href="/register" style={styles.link}>Register</Link>
+            <Link href="/profile" style={styles.link}>Profile Page</Link>
+
         </ThemedView>
     )
 }
