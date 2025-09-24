@@ -1,4 +1,6 @@
 import { createContext, useState, ReactNode } from "react"
+import {account} from "../lib/appwrite"
+import { ID } from "react-native-appwrite"
 
 interface User {
     email: string,
@@ -26,6 +28,12 @@ export function UserProvider({children}: UserProviderProps){
     }
 
     async function register(email:string, password:string) {
+        try{
+            await account.createEmailPasswordSession(email, password)
+
+        }catch(err){
+            console.log(err)
+        }
 
     }
 
